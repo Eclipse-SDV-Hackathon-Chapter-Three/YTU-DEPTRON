@@ -20,9 +20,11 @@ YTU-Deptron / Not Just Robotics It's Deptron
 Lab Challenge
 
 ## Core Idea  
-Controle Everything At Once 
+**“Control Everything at Once”** – an integrated feature controller that unifies different ADAS modules (cruise control, lane monitoring, and emergency response) into a single orchestrated system using the SDV Lab ecosystem.
 
-- Sketch will follow
+Instead of building one isolated feature, our prototype will demonstrate how multiple features can interact through a shared communication backbone (uProtocol, MQTT, or Zenoh), orchestrated by Ankaios, and tested in the CARLA simulator with a connected Android GUI cluster.
+
+We want to showcase how different ADAS components can run in parallel, exchange signals, and still be managed and visualized coherently by developers and drivers alike.
 
 ---
 
@@ -30,20 +32,42 @@ Controle Everything At Once
 
 ## Development Process  
 
-for now: ad hoc exploration 
+We adopt a hybrid exploratory and structured approach:
+
+**Exploration & Rapid Prototyping:** Each hacker experiments with small proof-of-concepts (e.g., Python PID controller, Rust + uProtocol integration, Android visualization).
+
+**Integration Phase:** Components are containerized with Podman and orchestrated using Ankaios for deployment consistency.
+
+**Simulation & Testing:** Features are validated in the CARLA simulator, then visualized through an PyQt.
+
+This ensures both speed during the hackathon and technical robustness for demonstration.
 
 ### Planning & Tracking  
 
-for now: track in github 
+GitHub will be used to host source code, track issues, and manage pull requests.
+
+We plan short sync meetings to align priorities and assign tasks.
+
+Milestones are tied to key features (first data exchange, first GUI visualization, full orchestration).
 
 ### Quality Assurance  
 
-for now: ad hoc
+**Code Reviews:** At least one teammate reviews each merge request.
+
+**Containerized Testing:** Each workload will be tested in isolation before cluster integration.
+
+**Simulation Runs:** Frequent CARLA scenario testing to validate correctness under different traffic and environment conditions.
+
+**Debugging Tools:** Using ank logs and CARLA debug sensors to trace data flow.
 
 ## Communication  
 
-for now: through deepl
+Channels: GitHub issues/discussions for technical matters, and a group chat for rapid coordination.
 
 ## Decision Making  
 
-for now: ad hoc
+Decisions are collaborative: proposals are discussed briefly, then agreed by majority.
+
+For urgent matters during development, hackers take ownership of their module and decide locally.
+
+Integration decisions are made together since they affect the full pipeline.
