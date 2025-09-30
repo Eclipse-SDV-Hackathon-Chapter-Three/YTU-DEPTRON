@@ -67,7 +67,3 @@ We use translation tools like DeepL to bridge communication gaps across differen
 ## Decision Making  
 
 Decisions are collaborative: proposals are discussed briefly, then agreed by majority.
-
-For urgent matters during development, hackers take ownership of their module and decide locally.
-
-Integration decisions are made together since they affect the full pipeline.
