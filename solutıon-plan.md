@@ -42,4 +42,5 @@ for now: ad hoc
 for now: through deepl
 
 ## Decision Making  
-*How are decisions made in your team?*
+
+for now: ad hoc
