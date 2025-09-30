@@ -11,9 +11,9 @@ YTU-Deptron / Not Just Robotics It's Deptron
 | Name | GitHub Handle | Role(s) |
 |-------|---------------|---------|
 | Meryem Koc | @codermery | hacker |
-| Ugur Aydin | @uguray75 | hacker |
+| Ugur Aydin | @uguray75 | GUI |
 | Rıchard Meınsen | @hackathon-develop  | hacker |
-| Murat Murat | @muratmurat34 | hacker |
+| Murat Murat | @muratmurat34 | GUI |
 | Juan Pizarro | @jpizarrom | hacker |
 
 ## Challenge  
