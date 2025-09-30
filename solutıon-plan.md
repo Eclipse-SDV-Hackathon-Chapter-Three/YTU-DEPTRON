@@ -62,7 +62,7 @@ Milestones are tied to key features (first data exchange, first GUI visualizatio
 
 ## Communication  
 
-Channels: GitHub issues/discussions for technical matters, and a group chat for rapid coordination.
+We use translation tools like DeepL to bridge communication gaps across different native languages.
 
 ## Decision Making  
 
