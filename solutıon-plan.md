@@ -12,9 +12,11 @@
 ## Team Members  
 | Name | GitHub Handle | Role(s) |
 |-------|---------------|---------|
-|       |               |         |
-|       |               |         |
-|       |               |         |
+| Meryem Koc | hackathon-develop | hacker |
+| Ugur Aydin | hackathon-develop | hacker |
+| Rıchard Meınsen | hackathon-develop | hacker |
+| Murat Murat | hackathon-develop | hacker |
+| Juan Pizarro | hackathon-develop | hacker |
 
 ## Challenge  
 *Which challenge have you decided to compete for?*
