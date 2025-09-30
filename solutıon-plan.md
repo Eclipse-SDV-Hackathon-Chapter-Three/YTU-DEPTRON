@@ -10,11 +10,11 @@ YTU-Deptron / Not Just Robotics It's Deptron
 ## Team Members  
 | Name | GitHub Handle | Role(s) |
 |-------|---------------|---------|
-| Meryem Koc | @codermery | hacker |
-| Ugur Aydin | @uguray75 | GUI |
-| Rıchard Meınsen | @hackathon-develop  | hacker |
-| Murat Murat | @muratmurat34 | GUI |
-| Juan Pizarro | @jpizarrom | hacker |
+| Meryem Koc | [codermery](https://github.com/codermery) | hacker |
+| Ugur Aydin | [uguray75](https://github.com/uguray75) | GUI |
+| Rıchard Meınsen | [hackathon-develop](https://github.com/hackathon-develop)  | hacker |
+| Murat Murat | [muratmurat34](https://github.com/muratmurat34) | GUI |
+| Juan Pizarro | [jpizarrom](https://github.com/jpizarrom) | hacker |
 
 ## Challenge  
 Lab Challenge
