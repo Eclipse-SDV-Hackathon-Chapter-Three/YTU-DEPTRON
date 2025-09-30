@@ -2,7 +2,7 @@
 
 # 1. Your Team at a Glance
 
-## YTU-Deptron / Not Just Robotics
+YTU-Deptron / Not Just Robotics
 
 ## Team Members  
 | Name | GitHub Handle | Role(s) |
