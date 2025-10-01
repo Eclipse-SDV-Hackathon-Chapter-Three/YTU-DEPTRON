@@ -6,6 +6,12 @@ The training of the SAC policy was done with https://github.com/zihaosheng/VLM-R
 - observation space: steer, throttle, speed, rgb_camera
 - action space: steer, throttle
 
+
+## SAC policy video driving in Carla simulator
+
+[![SAC Policy Video](https://img.youtube.com/vi/gQlz7sNyhC4/0.jpg)](https://youtu.be/gQlz7sNyhC4)
+
+
 ## Run instructions
 ### Start ankaios for the mqtt_broker and ustreamer
 ```
