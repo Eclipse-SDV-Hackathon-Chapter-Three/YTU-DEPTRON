@@ -1,6 +1,27 @@
 
 # Experiment with SAC to drive on the Carla simulator.
 
+## Architecture
+
+```mermaid
+graph TD
+    A[Carla Simulator] -->|RPC Connection<br/>Port 2000| B[manual_control_sensors.py]
+    B -->|Vehicle Control Commands<br/>steer, throttle| A
+    B -->|Sensor Data<br/>rgb_camera, speed| C[SAC Policy]
+    C -->|Action<br/>steer, throttle| B
+    B -->|MQTT Messages| D[MQTT Broker<br/>127.0.0.1:1883]
+    D -->|Vehicle Data| E[Data Consumer<br/>cargo run]
+    
+    subgraph "Ankaios System"
+        F[ank-server]
+        G[ank-agent]
+        D
+        H[ustreamer]
+    end
+```
+
+## Overview
+
 The training of the SAC policy was done with https://github.com/zihaosheng/VLM-RL
 
 - observation space: steer, throttle, speed, rgb_camera
@@ -42,3 +63,4 @@ RUST_LOG=debug cargo run --release -- --ego-vehicle-role ego_vehicle --router 12
 ```
 mosquitto_sub -v -h 127.0.0.1 -p 1883 -t '#'
 ```
+
