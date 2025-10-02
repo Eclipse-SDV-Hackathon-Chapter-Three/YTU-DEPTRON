@@ -1,0 +1,21 @@
+[project]
+name = "carla-setup"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.10,<3.11"
+dependencies = [
+    "carla==0.9.15",
+    "eclipse-zenoh==1.5.1",
+    "just>=0.8.165",
+    "matplotlib==3.10.6",
+    "networkx>=3.4.2",
+    "numpy",
+    "paho-mqtt==1.6.1",
+    "pygame>=2.6.1",
+    "python-box>=7.3.2",
+    "shapely>=2.1.2",
+    "stable-baselines3==2.0.0",
+    "opencv-python",
+
+]
