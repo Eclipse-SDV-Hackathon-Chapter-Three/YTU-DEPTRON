@@ -4,7 +4,8 @@ from PyQt6.QtCore import Qt
 from widgets.speed_gauge import SpeedGauge
 from widgets.obstacle_map import ObstacleMap
 from widgets.info_panel import InfoPanel
-from mqtt.zenoh_client import ZenohMQTTClient
+# from mqtt.zenoh_client import ZenohMQTTClient
+import paho.mqtt.client as mqtt
 from config import *
 
 
@@ -37,20 +38,39 @@ class DashboardWindow(QMainWindow):
     
     def _setup_mqtt(self):
         """Setup MQTT client and connect signals"""
-        self.mqtt_client = ZenohMQTTClient(ZENOH_MQTT_BROKER, ZENOH_MQTT_PORT)
+        # self.mqtt_client = ZenohMQTTClient(ZENOH_MQTT_BROKER, ZENOH_MQTT_PORT)
+        self.mqtt_client = mqtt.Client(mqtt.CallbackAPIVersion.VERSION2)
+
+        def on_connect(client, userdata, flags, reason_code, properties):
+            print(f"Connected with result code {reason_code}")
+            # Subscribing in on_connect() means that if we lose the connection and
+            # reconnect then subscriptions will be renewed.
+            client.subscribe("#")
+
+        # The callback for when a PUBLISH message is received from the server.
+        def on_message(client, userdata, msg):
+            print(msg.topic+" "+str(msg.payload.decode()))
+            self._on_speed_received(float(msg.payload.decode()))
+
+        self.mqtt_client.on_connect = on_connect
+        self.mqtt_client.on_message = on_message
         
         # Add topics
-        for topic in ZENOH_MQTT_TOPICS.values():
-            self.mqtt_client.add_topic(topic)
+        # for topic in ZENOH_MQTT_TOPICS.values():
+            # print(f"Subscribing to topic: {topic}")
+            # self.mqtt_client.add_topic(topic)
+        self.mqtt_client.connect("127.0.0.1", 1883, 60)
         
         # Connect signals
-        self.mqtt_client.speed_received.connect(self._on_speed_received)
-        self.mqtt_client.obstacle_received.connect(self._on_obstacle_received)
-        self.mqtt_client.sleep_detected.connect(self._on_sleep_detected)
-        self.mqtt_client.coordinates_received.connect(self._on_coordinates_received)
+        # self.mqtt_client.speed_received.connect(self._on_speed_received)
+        # self.mqtt_client.obstacle_received.connect(self._on_obstacle_received)
+        # self.mqtt_client.sleep_detected.connect(self._on_sleep_detected)
+        # self.mqtt_client.coordinates_received.connect(self._on_coordinates_received)
         
-        # Start MQTT client
-        self.mqtt_client.start()
+        # # Start MQTT client
+        # self.mqtt_client.start()
+
+        thread = self.mqtt_client.loop_start()
     
     def _on_speed_received(self, speed):
         """Handle speed data"""

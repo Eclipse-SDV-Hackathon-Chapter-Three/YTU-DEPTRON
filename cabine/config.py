@@ -1,7 +1,8 @@
 """Application configuration settings"""
 
 # MQTT Settings for Zenoh
-ZENOH_MQTT_BROKER = "192.168.89.250"
+# ZENOH_MQTT_BROKER = "192.168.89.250"
+ZENOH_MQTT_BROKER = "127.0.0.1"
 ZENOH_MQTT_PORT = 1883
 ZENOH_MQTT_TOPICS = {
     "speed": "EGOVehicle/0/0/2/8001",
